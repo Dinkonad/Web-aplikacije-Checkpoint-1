@@ -33,7 +33,7 @@ router.put("/:id", (req, res) => {
   if (index === -1) {
     return res.status(404).json({ message: "Fotografija nije pronađena" });
   }
-  const fotografPostoji = fotografi.some(f => f.id === novafotografija.fotografId);
+  const fotografPostoji = fotografi.some(foto => foto.id === novafotografija.fotografId);
   if (!fotografPostoji) {
     return res.status(400).json({ message: "Taj fotograf ne postoji" });
   }
